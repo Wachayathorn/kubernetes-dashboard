@@ -1,0 +1,12 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: kubernetes-dashboard-lb
+spec:
+  controller: example.com/ingress-controller
+  parameters:
+    apiGroup: kube-dashboard-example.com
+    kind: IngressParameters
+    name: kubernetes-dashboard-lb
+    namespace: kubernetes-dashboard
+    scope: Namespace
